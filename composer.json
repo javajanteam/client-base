@@ -1,14 +1,40 @@
 {
     "name": "javajanteam/ywt",
-    "description": "",
-    "keywords": ["yesweticket"],
+    "description": "YesWeTicket Base client",
+    "keywords": [
+        "yesweticket"
+    ],
     "license": "MIT",
     "type": "project",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@gitlab.com:javajan_laravel/tincket-client.git",
+            "options": {
+                "ssh2": {
+                    "pubkey_file": "~/.ssh/id_rsa_tincket.pub",
+                    "privkey_file": "~/.ssh/id_rsa_tincket"
+                }
+            }
+        },
+        {
+            "type": "vcs",
+            "url": "git@gitlab.com:javajan_laravel/tincket-laravel-services.git",
+            "options": {
+                "ssh2": {
+                    "pubkey_file": "~/.ssh/id_rsa_tincket.pub",
+                    "privkey_file": "~/.ssh/id_rsa_tincket"
+                }
+            }
+        }
+    ],
     "require": {
         "php": ">=7.0.0",
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",
-        "laravel/tinker": "~1.0"
+        "laravel/tinker": "~1.0",
+        "tincket/client": "dev-develop",
+        "tincket/laravel-services": "dev-develop"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
@@ -32,8 +58,7 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": [
-            ]
+            "dont-discover": []
         }
     },
     "scripts": {
