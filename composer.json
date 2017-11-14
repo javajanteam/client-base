@@ -67,7 +67,7 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate",
-            "@php artisan tincket-key:set"
+            "php artisan tincket-key:set"
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
