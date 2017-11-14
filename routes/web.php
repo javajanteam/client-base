@@ -2,15 +2,10 @@
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| By default Laravel here has a route to '/'. This file NOW is empty because
+| default routes are on: vendor/tincket/client/src/routes/client.php
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
