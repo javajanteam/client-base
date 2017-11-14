@@ -11,5 +11,24 @@ let mix = require('laravel-mix');
  |
  */
 
+mix.webpackConfig({
+    resolve: {
+        alias: {
+            jquery: "jquery/src/jquery",
+            'popper.js' : "popper.js/dist/umd/popper.js"
+        }
+    }
+});
+
+mix.sass('resources/assets/sass/app.scss', 'public/css');
 mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+mix.js('resources/assets/js/components/pack/packs.js', 'public/js')
+    .extract(['popper.js', 'bootstrap', 'axios', 'lodash', 'vue'])
+    .autoload({
+        'jquery': ['$', 'jQuery', 'jquery', 'window.jQuery'],
+        'popper.js': ['Popper', 'window.Popper']
+    });
+
+if (mix.config.inProduction) {
+    mix.version();
+}
