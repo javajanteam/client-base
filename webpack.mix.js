@@ -11,23 +11,28 @@ let mix = require('laravel-mix');
  |
  */
 
+
 mix.webpackConfig({
     resolve: {
         alias: {
             jquery: "jquery/src/jquery",
-            'popper.js' : "popper.js/dist/umd/popper.js"
+            'popper.js': "popper.js/dist/umd/popper.js"
         }
     }
 });
 
+mix.extract(['popper.js', 'bootstrap', 'axios', 'lodash', 'vue'])
+        .autoload({
+            'jquery': ['$', 'jQuery', 'jquery', 'window.jQuery'],
+            'popper.js': ['Popper', 'window.Popper']
+        });
+
 mix.sass('resources/assets/sass/app.scss', 'public/css');
 mix.js('resources/assets/js/app.js', 'public/js')
 mix.js('resources/assets/js/components/pack/packs.js', 'public/js')
-    .extract(['popper.js', 'bootstrap', 'axios', 'lodash', 'vue'])
-    .autoload({
-        'jquery': ['$', 'jQuery', 'jquery', 'window.jQuery'],
-        'popper.js': ['Popper', 'window.Popper']
-    });
+mix.js('resources/assets/js/components/slots/slots.js', 'public/js');
+
+mix.js('resources/assets/js/widgets/rates-selector.js', 'public/js')
 
 if (mix.config.inProduction) {
     mix.version();
