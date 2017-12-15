@@ -1,0 +1,25 @@
+/*!
+ * base theme for ywt
+ *
+ * @package  tincket/client
+ * @author   Jaume Masarnau <jaume@javajan.com>
+ */
+
+/*
+	Here we load the sass theme based on bootstrap.
+	
+	Any override of this theme can be done here,
+	we strictly recommend to *not edit* this folder:
+	sass/vendor/tincket-client
+
+	Instead try things *here* like:
+
+	$primary: red;
+
+	And other overrides.
+
+	$ artisan vendor:publish && npm run watch (or watch-poll)
+
+*/
+
+@import "vendor/tincket-client/theme/theme.scss";
