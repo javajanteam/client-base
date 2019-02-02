@@ -17,6 +17,8 @@
         "laravel-mix": "^1.0",
         "lodash": "^4.17.4",
         "vue": "^2.1.10",
-        "popper.js": "^1.11.0"
+        "popper.js": "^1.11.0",
+        "slick-carousel": "^1.8.0",
+        "svg.js": "^2.6.0"
     }
 }
