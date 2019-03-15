@@ -43,13 +43,13 @@ class TincketFinishInstallation extends Command
         $version = $this->ask('Which major version? Use composer notation like ^1.6.0 or ^1.7.0, etc. '
                 . 'Do not specify minor version here. Do it manually if needed');
 
-        $composer_file = base_path('composer-test.json');
+        $composer_file = base_path('composer.json');
         $composer = file_get_contents($composer_file);
         $composer = preg_replace('/("tincket\/.+":( )+)".*"/', '$1"' . $version . '"', $composer);
 
         file_put_contents($composer_file, $composer);
 
-        exec('composer install');
+        exec('composer update tincket/client tincket/laravel-services');
     }
 
     private function installNpm()
@@ -66,6 +66,11 @@ class TincketFinishInstallation extends Command
         
         // modify primary color in asset.scss
         $primary = $this->ask('Indicate primary color of the brand. Eg: #ea3400');        
+        
+        # TODO! Atenció això només és vàlid per versions de tincket/client > 1.6.6.
+        # es podria plantejar alternativa per inferiors o deixar-ho tal qual, fet que el 
+        # faria petar i necessitaria acció manual creant el fitxer app.scss
+        
         $sass_file = resource_path('assets/sass/app.scss');
         $sass = file_get_contents($sass_file);
         $sass = preg_replace('/(\$primary:)( )*.*/', "$1 $primary;", $sass);        
