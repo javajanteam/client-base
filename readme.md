@@ -12,6 +12,8 @@ Needs explanation.
 
 `composer create-project --prefer-dist javajanteam/ywt {directory} dev-master`
 
+`cd {directory}` 
+
 `php artisan tincket:install` 
 
 `npm run (dev|prod)`
