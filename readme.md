@@ -16,6 +16,8 @@ Needs explanation.
 
 `php artisan tincket:install` 
 
+`npm install`
+
 `npm run (dev|prod)`
 
 `php artisan tincket:key-set` 

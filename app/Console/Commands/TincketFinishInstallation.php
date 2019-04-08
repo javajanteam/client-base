@@ -29,8 +29,7 @@ class TincketFinishInstallation extends Command
     public function handle()
     {
         $this->configureComposerAndInstall();
-        $this->installNpm();
-        $this->installAndConfigureAssets();
+        $this->configureAssetsAndInstall();
 
         $this->info("\nDone!");
         $this->warn("Do not forget to run `npm run dev` or `npm run prod` as needed");
@@ -52,12 +51,7 @@ class TincketFinishInstallation extends Command
         exec('composer update tincket/client tincket/laravel-services');
     }
 
-    private function installNpm()
-    {
-        exec('npm install');
-    }
-
-    private function installAndConfigureAssets()
+    private function configureAssetsAndInstall()
     {
         \Illuminate\Support\Facades\Artisan::call('vendor:publish', ['--tag' => 'tincket/client/install']);
         $this->info(\Illuminate\Support\Facades\Artisan::output());
