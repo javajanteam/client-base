@@ -8,8 +8,22 @@
     "type": "project",
     "repositories": [
         {
+            "type": "path",
+            "url": "./packages/tincket/client",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "./packages/tincket/laravel-services",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
             "type": "vcs",
-            "url": "git@gitlab.com:javajan_laravel/tincket-client.git",
+            "url": "git@gitlab.com:yesweticket/packages/tincket-client.git",
             "options": {
                 "ssh2": {
                     "pubkey_file": "~/.ssh/id_rsa_tincket.pub",
@@ -19,7 +33,7 @@
         },
         {
             "type": "vcs",
-            "url": "git@gitlab.com:javajan_laravel/tincket-laravel-services.git",
+            "url": "git@gitlab.com:yesweticket/packages/tincket-laravel-services.git",
             "options": {
                 "ssh2": {
                     "pubkey_file": "~/.ssh/id_rsa_tincket.pub",
@@ -33,8 +47,9 @@
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
-        "tincket/client": "dev-develop",
-        "tincket/laravel-services": "dev-develop"
+        "mcamara/laravel-localization": "1.3.19",
+        "tincket/client": "^1.7.0",
+        "tincket/laravel-services": "^1.7.0"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
