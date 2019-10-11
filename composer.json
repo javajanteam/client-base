@@ -9,7 +9,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "git@gitlab.com:javajan_laravel/tincket-client.git",
+            "url": "git@gitlab.com:yesweticket/packages/tincket-client.git",
             "options": {
                 "ssh2": {
                     "pubkey_file": "~/.ssh/id_rsa_tincket.pub",
@@ -19,7 +19,7 @@
         },
         {
             "type": "vcs",
-            "url": "git@gitlab.com:javajan_laravel/tincket-laravel-services.git",
+            "url": "git@gitlab.com:yesweticket/packages/tincket-laravel-services.git",
             "options": {
                 "ssh2": {
                     "pubkey_file": "~/.ssh/id_rsa_tincket.pub",
